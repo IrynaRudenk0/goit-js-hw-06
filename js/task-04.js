@@ -1,6 +1,6 @@
 const counterValue = document.querySelector('#value');
-const decrementBtn = document.querySelector('dataset-decrement');
-const incrementBtn = document.querySelector('dataset-increment');
+const decrementBtn = document.querySelector('[data-action="decrement"]');
+const incrementBtn = document.querySelector('[data-action="increment"]');
 
 const onClick = (value=0, a) => {
     value += a;
