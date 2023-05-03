@@ -2,11 +2,21 @@ const counterValue = document.querySelector('#value');
 const decrementBtn = document.querySelector('[data-action="decrement"]');
 const incrementBtn = document.querySelector('[data-action="increment"]');
 
-const onClick = (value=0, a) => {
-    value += a;
-    counterValue = value;
-}
+let counterValue = 0;
 
-decrementBtn.addEventListener('click', onClick(value, +1));
-incrementBtn.addEventListener('click', onClick(value, -1));
+const increment = (event) => {
+  counterValue += 1;
+
+  counterValue.textContent = counterValue;
+};
+
+const decrement = (event) => {
+  counterValue -= 1;
+
+  counterValue.textContent = counterValue;
+};
+
+incrementBtn.addEventListener('click', increment);
+decrementBtn.addEventListener('click', decrement);
+
 

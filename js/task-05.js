@@ -6,8 +6,8 @@
 const textInput = document.querySelector('#name-input');
 const textOutput = document.querySelector('#name-output');
 
-input.addEventListener('input', text)
+textInput.addEventListener('input', text)
 
-const text = (event) => { 
-textOutput.textContent = event.currentTarget.value
+const text = event => { 
+textOutput.textContent = event.target.value
 };
