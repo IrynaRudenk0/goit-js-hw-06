@@ -4,18 +4,12 @@
 // Якщо введена правильна кількість символів, то border інпуту стає зеленим, якщо неправильна кількість - червоним.
 
 const input = document.querySelector('#validation-input');
-
-input.addEventListener('blur', onBlur)
+const length = Number(input.dataset.length);
     
-    
-function onBlur() {
- if (input.length === 6) {
-    input.classList.add("valid")
- }
-    
- else {
-     input.classList.add("invalid")
-   };
-}
-
+input.addEventListener("blur", (event) => { 
+    input.classList.add('invalid');
+   if (event.currentTarget.value.length === length) {
+      input.classList.replace('invalid', 'valid')
+   }   
+});
   

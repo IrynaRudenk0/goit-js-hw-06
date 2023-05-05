@@ -13,15 +13,14 @@ form.addEventListener("submit", onSubmit)
 function onSubmit(event) {
     event.preventDefault();
     
+    const {elements: { email, password }
+  } = event.currentTarget;
+
     if (email.value === "" || password.value === "") {
         return alert("Заповність усі поля!");
     }
     
-    const userData = {
-        email = email.value,
-        password = password.value
-    }
-
-    console.log(userData);
+    console.log({ "email": email.value, "password": password.value });
     event.currentTarget.reset();
 }
+

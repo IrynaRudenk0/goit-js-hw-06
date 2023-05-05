@@ -14,13 +14,17 @@ const ingredients = [
 // Після чого, вставить усі < li > за одну операцію у список ul#ingredients.
 
 const ingredientsList = document.querySelector('#ingredients');
-const ingredientItems = ingredients.forEach(item => {
-  const items = document.createElement('li');
-  // item.textContent = item;
-  // item.addClass = 'item';
-  items.innerHTML = item;
-  ingredientsList.append(items);
-  parent.append(...items);
-});
-  console.log(ingredientItems);
 
+const ingredientItems = ingredients.map(item => {
+  const listItem = document.createElement('li');
+  listItem.textContent = item;
+  listItem.classList.add('item');
+  return listItem;
+});
+
+const makeList = ingredients => {
+  return ingredientItems;
+}
+
+const listEl = makeList(ingredients)
+ingredientsList.append(...listEl)

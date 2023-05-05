@@ -2,12 +2,12 @@
 //     підставляє його поточне значення в span#name - output. 
 // Якщо інпут порожній, у спані повинен відображатися рядок "Anonymous".
 
-
-const textInput = document.querySelector('#name-input');
-const textOutput = document.querySelector('#name-output');
-
-textInput.addEventListener('input', text)
+const textInput = document.querySelector("#name-input");
+const textOutput = document.querySelector("#name-output");
 
 const text = event => { 
-textOutput.textContent = event.target.value
+    textOutput.textContent = event.currentTarget.value;
+  if (event.currentTarget.value === "") {textOutput.textContent = "Anonymous"};
 };
+
+textInput.addEventListener("input", text)
